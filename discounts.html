@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endirimlər - TələbəLife</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .discounts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .discount-card {
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .discount-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .discount-content {
+            padding: 1.5rem;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background-color: #ef4444;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .discount-title {
+            color: #1e293b;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .discount-description {
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+
+        .discount-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .get-discount-button {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .get-discount-button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .category-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .category-tab {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.25rem;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .category-tab.active {
+            background-color: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">TələbəLife</a>
+            <div class="nav-links">
+                <a href="index.html">Ana Səhifə</a>
+                <a href="groups.html">Qruplar</a>
+                <a href="notes.html">Notlar</a>
+                <a href="events.html">Tədbirlər</a>
+                <a href="discounts.html" class="active">Endirimlər</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Endirimlər</h1>
+
+        <div class="filter-buttons">
+            <button class="filter-button active" data-filter="all">Hamısı</button>
+            <button class="filter-button" data-filter="restaurant">Restoranlar</button>
+            <button class="filter-button" data-filter="cafe">Kafelər</button>
+            <button class="filter-button" data-filter="shop">Mağazalar</button>
+            <button class="filter-button" data-filter="entertainment">Əyləncə</button>
+        </div>
+
+        <div class="discounts-grid">
+            <div class="discount-card filterable-item" data-category="restaurant">
+                <div class="discount-badge">20% Endirim</div>
+                <h3 class="discount-title">Pizza House</h3>
+                <p>Bütün pizzalarda 20% endirim. Tələbə kartı ilə.</p>
+                <button class="get-discount-button">Endirimi Əldə Et</button>
+            </div>
+
+            <div class="discount-card filterable-item" data-category="cafe">
+                <div class="discount-badge">15% Endirim</div>
+                <h3 class="discount-title">Coffee Lab</h3>
+                <p>Bütün içkilərdə 15% endirim. Tələbə kartı ilə.</p>
+                <button class="get-discount-button">Endirimi Əldə Et</button>
+            </div>
+
+            <div class="discount-card filterable-item" data-category="shop">
+                <div class="discount-badge">25% Endirim</div>
+                <h3 class="discount-title">Book Store</h3>
+                <p>Bütün kitablarda 25% endirim. Tələbə kartı ilə.</p>
+                <button class="get-discount-button">Endirimi Əldə Et</button>
+            </div>
+
+            <div class="discount-card filterable-item" data-category="entertainment">
+                <div class="discount-badge">30% Endirim</div>
+                <h3 class="discount-title">Cinema Plus</h3>
+                <p>Bütün biletlərdə 30% endirim. Tələbə kartı ilə.</p>
+                <button class="get-discount-button">Endirimi Əldə Et</button>
+            </div>
+
+            <div class="discount-card filterable-item" data-category="restaurant">
+                <div class="discount-badge">10% Endirim</div>
+                <h3 class="discount-title">Burger King</h3>
+                <p>Bütün menyuda 10% endirim. Tələbə kartı ilə.</p>
+                <button class="get-discount-button">Endirimi Əldə Et</button>
+            </div>
+
+            <div class="discount-card filterable-item" data-category="cafe">
+                <div class="discount-badge">20% Endirim</div>
+                <h3 class="discount-title">Starbucks</h3>
+                <p>Bütün içkilərdə 20% endirim. Tələbə kartı ilə.</p>
+                <button class="get-discount-button">Endirimi Əldə Et</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 TələbəLife. Bütün hüquqlar qorunur.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-button');
+            const discountCards = document.querySelectorAll('.discount-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Aktiv düyməni yenilə
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filter = button.getAttribute('data-filter');
+
+                    // Kartları filtrlə
+                    discountCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                            // Animasiya əlavə et
+                            card.style.animation = 'fadeIn 0.5s ease';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Endirim düymələri üçün
+            const discountButtons = document.querySelectorAll('.get-discount-button');
+            discountButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const discountTitle = this.closest('.discount-card').querySelector('.discount-title').textContent;
+                    const discountBadge = this.closest('.discount-card').querySelector('.discount-badge').textContent;
+                    showNotification(`${discountTitle} - ${discountBadge} endirimi uğurla aktivləşdirildi!`, 'success');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
